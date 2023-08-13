@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import {Route, Routes} from "react-router-dom";
+import axios from "axios";
+import BoardList from "./routes/BoardList";
+import Home from "./routes/Home";
+import TitleClick_view from "./routes/TitleClick_view";
+import Interceptor from "./utils/L";
+import Login from "./routes/Login";
+import CreateBoard from "./routes/CreateBoard";
+import CreateNetwork from "./routes/CreateNetwork";
 
 function App() {
+  Interceptor();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/"element={<Home/>}/>
+        <Route path="/board" element={<BoardList/>}/>
+        <Route path="/board/view/:idx" element={<TitleClick_view/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/create" element={<CreateBoard/>}/>
+        <Route path="/create/:idx" element={<CreateNetwork/>}/>
+      </Routes>
   );
-}
+};
 
 export default App;
+ 
