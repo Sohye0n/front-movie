@@ -1,47 +1,39 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import Interceptor from "../utils/L"
-import { useNavigate } from 'react-router-dom';
+import React,{useState} from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Login=()=>{
+const Join=()=>{
 
     const [Nickname, setNickname] = useState("");
     const [Pw, setPw] = useState("");
     const navigate=useNavigate();
 
-    const onNicknameHandler = (event) => {
+    const onNicknameHandler=(event)=>{
         setNickname(event.currentTarget.value);
     }
-    const onPwHandler = (event) => {
-        setPw(event.currentTarget.value);
+    const onPwHandler=(event)=>{
+        setPw(event.currentTarget.value)
     }
-    const onSubmitHandler = async (event) => {
-        // 버튼만 누르면 리로드 되는것을 막아줌
+    const onSubmitHandler=async(event)=>{
         event.preventDefault();
 
-        console.log('nickname', Nickname);
-        console.log('Password', Pw);
-        
-        let data = {
+        let data={
             nickname: Nickname,
             pw: Pw
         };
+        console.log(data);
 
         try{
-            const resp=(await axios.post("/login",data)).data;
-            console.log(resp.token);
-            localStorage.setItem('accessToken',resp.token);
-            navigate('/');
+            const resp=(await axios.post("/join",data)).status;
+            if(resp==200) navigate('/login');
+            else if(resp==409) alert("중복된 ID입니다.");
         }
         catch(error){
             console.error(error);
         }
     }
-    const move=()=>{
-        navigate('/join');
-    }
- 
-    return (
+
+    return(
         <div style={{ 
             display: 'flex', justifyContent: 'center', alignItems: 'center', 
             width: '100%', height: '100vh'
@@ -55,12 +47,11 @@ const Login=()=>{
                 <input type='Pw' value={Pw} onChange={onPwHandler}/>
                 <br />
                 <button formAction=''>
-                    Login
+                    Join
                 </button>
             </form>
-            <button onClick={move}>Join</button>
         </div>
-    ) 
+    )
 }
 
-export default Login;
+export default Join;

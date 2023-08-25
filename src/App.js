@@ -8,6 +8,7 @@ import Interceptor from "./utils/L";
 import Login from "./routes/Login";
 import CreateBoard from "./routes/CreateBoard";
 import CreateNetwork from "./routes/CreateNetwork";
+import Join from "./routes/Join";
 
 function App() {
   Interceptor();
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/create" element={<CreateBoard/>}/>
         <Route path="/create/:idx" element={<CreateNetwork/>}/>
+        <Route path="/join" element={<Join/>}/>
       </Routes>
   );
 };
