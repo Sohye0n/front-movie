@@ -93,7 +93,6 @@ const Network=({boardId,nodeList})=>{
         if(NodeImageUrl) node.image=NodeImageUrl;
         else if(NodeLocalImage) {
             node.image=NodeLocalImage;
-            setNodeLocalImage(null);
         }
         else{
             node.image="../";
@@ -121,26 +120,13 @@ const Network=({boardId,nodeList})=>{
 
     const handleEmptyClick=()=>{setClickedNodeIndex(-1);};
 
-    // useEffect(() => {
-    //     const handleEmptyClick = () => {
-    //       setClickedNodeIndex(-1);
-    //     };
-      
-    //     // 클릭 이벤트 리스너 추가
-    //     document.addEventListener('click', handleEmptyClick);
-      
-    //     return () => {
-    //       // 클릭 이벤트 리스너 제거
-    //       document.removeEventListener('click', handleEmptyClick);
-    //     };
-    //   }, []);
-
     useEffect(()=>{
         console.log("Node Click detected");
         console.log(ClickedNodeIndex);
         if(ClickedNodeIndex!=-1){
             setNodename_(nodes[ClickedNodeIndex].label);
             setNodeDescription(nodes[ClickedNodeIndex].title);
+
         }
         else{
             setNodename_("");
@@ -158,7 +144,6 @@ const Network=({boardId,nodeList})=>{
     const edit=()=>{
         console.log("editing...");
 
-        
         //서버로 보낼 배열 수정
         const EditedNodeIndex=updatedNodes.findIndex(node=>node.id==nodes[ClickedNodeIndex].id);
         console.log(EditedNodeIndex);
@@ -187,7 +172,7 @@ const Network=({boardId,nodeList})=>{
                 id:ClickedNodeIndex,
                 label:NodeName_,
                 title:NodeDescription,
-                shape:"Image",
+                shape:"image",
                 image:newimage,
             };
         }
@@ -198,6 +183,12 @@ const Network=({boardId,nodeList})=>{
         newnodes.splice(ClickedNodeIndex,1);
         newnodes.push(newnode);
         setNodes(newnodes);
+
+        //다시 모든 칸을 빈칸으로
+        setNodename_("");
+        setNodeDescription("");
+        setNodeImageUrl("");
+        setNodeLocalImage(null);
     };
 
     return (
