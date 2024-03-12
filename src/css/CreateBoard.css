@@ -1,0 +1,46 @@
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px; /* 각 이미지 간의 간격을 조절합니다. */
+}
+  
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px; /* Negative margin to offset spacing between items */
+}
+
+.image-item {
+  flex: 0 0 calc(20% - 16px); /* Adjust the width as needed */
+  margin-left: 1.5px; /* Spacing between items */
+  margin-right: 1.5px; /* Spacing between items */
+  margin-bottom: 15px;
+  height:150px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: 8px 16px; /* 버튼 안쪽 여백 설정 */
+  font-size: 14px; /* 폰트 크기 설정 */
+  background-color: #3498db; /* 배경색 설정 */
+  color: #fff; /* 텍스트 색상 설정 */
+  border: none; /* 테두리 제거 */
+  cursor: pointer; /* 마우스 호버 시 커서 모양 변경 */
+}
+
+/* 마우스 호버 시 배경색 변경 */
+.button:hover {
+  background-color: #2980b9;
+}
+  

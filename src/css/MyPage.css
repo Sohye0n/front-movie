@@ -1,0 +1,15 @@
+.mypage {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mypage-board,
+.mypage-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.mypage-board-title,
+.mypage-comment-title {
+    margin-bottom: 10px;
+}

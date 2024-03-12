@@ -28,9 +28,11 @@ const Login=()=>{
         };
 
         try{
-            const resp=(await axios.post("/login",data)).data;
-            console.log(resp.token);
-            localStorage.setItem('accessToken',resp.token);
+            const resp=(await axios.post("/login",data));
+            const responseHeader=await resp.headers['authorization']
+            const accessToken=responseHeader.substring(6);
+            localStorage.setItem('accessToken',accessToken);
+            console.log(responseHeader); console.log(accessToken);
             navigate('/');
         }
         catch(error){

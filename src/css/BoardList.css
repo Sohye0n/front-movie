@@ -1,0 +1,12 @@
+.boardList{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 23px;
+}
+
+.ret .head{
+    font-size:27px;
+    margin-bottom: 30px;
+}

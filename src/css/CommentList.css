@@ -1,0 +1,107 @@
+.commentList{
+    display:flex;
+    flex-direction: column;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width:1200px;
+    position: relative;
+}
+
+.comment .content{
+    display: flex;
+    flex-direction: row;
+}
+
+.content .ref{
+    font-display: red;
+}
+
+.comment .word{
+    width: 730px;
+    padding: 0;
+}
+
+.comment .submit{
+    width: 100px;
+    margin-right: 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+}
+
+.writer{
+    order:1;
+}
+
+.content{
+    order:2;
+}
+
+.createAt{
+    order:3;
+}
+
+.resp{
+    order:4;
+}
+
+.input{
+    display:f flex;
+    flex-direction: row;
+    position: relative;
+    min-height: 40px;
+    padding-top: 7px;
+}
+
+.input .submit{
+    position:absolute;
+    margin-top: 10px;
+}
+
+.input{
+    border: 1px solid black;
+    width: 850px;
+}
+
+.resp .input{
+    border: 1px solid black;
+    width: 845px;
+    min-height: 45px;
+}
+
+.tag{
+    border:1px solid gray;
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    margin-top: 10;
+    border-radius: 20px;
+    background-color: gray;
+}
+
+.resp .submit{
+    width: 100px;
+    margin-right: 0;
+    height: auto;
+}
+
+.tagButton{
+    border: none;
+    font-size: 11px;
+    transform: translateY(-2px);
+    margin: 0;
+    padding: 0;
+    height: 5px;
+    background-color: transparent;
+}
+
+.inputBox{
+    border-width: 0;
+    outline: none;
+    width:650px;
+    margin-left:10px
+}

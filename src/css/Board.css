@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    order:1;
+}
+
+.body{
+    display: flex;
+    order:2;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.comment{
+    order:3;
+    position: absolute;
+}
+
+.left{
+    flex:2;
+    padding:0;
+}
+
+.right {
+    flex: 1;
+    margin-top: 150px;
+}
