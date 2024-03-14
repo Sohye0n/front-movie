@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_KEY = "d2461ff4c38665609c69ea6a8e166a79";
-const TOKEN="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjQ2MWZmNGMzODY2NTYwOWM2OWVhNmE4ZTE2NmE3OSIsInN1YiI6IjY1OTE3ZTZhNGY5YTk5NzUyNjc3MzEzMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-y5avFuJfY55ga56YZ1qhgBovQzyMu2AlnZdy0bOTCE";
+const API_KEY = "";
+const TOKEN="";
 
 const fetchTVData = async (title, page) => {
   try {
